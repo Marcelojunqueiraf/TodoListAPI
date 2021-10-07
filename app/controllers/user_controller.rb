@@ -1,8 +1,18 @@
 class UserController < ApplicationController
-    before_action :set_user, except: [:index, :create]
+    before_action :set_user, except: [:index, :create, :login]
     def index
         users = User.all
         render json: users, status: :ok
+    end
+
+    def login
+        puts params[:name]
+        user = User.find_by(name: params[:name])
+        if user == nil
+            render json: {description: "user not found"}, status: :not_found
+        else
+            render json: user, status: :ok
+        end
     end
 
     def show
