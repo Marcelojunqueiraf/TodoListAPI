@@ -6,6 +6,7 @@ body:{name:string, bio:string}
 * get /user/user_id #get single user  
 * patch /user/user_id #modify a user  
 body:{name:string, bio:string}
+* get /login/?name=nick #fazer login usando nome como parametro
 * get/user/user_id/todos #get all todos from a user  
 * post /user/user_id/todos #create todo  
 body:{title:string, description:string, checked:integer}
